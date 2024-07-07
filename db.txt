@@ -1,0 +1,23 @@
+CREATE DATABASE log_db;
+
+USE log_db;
+
+CREATE TABLE user_student (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(255)  NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE logbook_entries (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    entry_date DATE NOT NULL,
+    entry_time DATE NOT NULL,
+    days VARCHAR(20) NOT NULL,
+    week INT NOT NULL,
+    activitydescription TEXT,
+    workinghours VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
